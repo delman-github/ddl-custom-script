@@ -9,3 +9,6 @@ There are three kinds of customizations which can be implemented in DDL:
 2. Custom Combine
 
 3. Custom Conector
+
+you can access delman guide here:
+https://guide.delman.io/userguide/custom
