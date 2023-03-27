@@ -47,6 +47,7 @@ class COVIDDataConnector(BaseConnector):
         if import_params["jenis_data"] == "provinsi":
             check_keys(("provinsi",), import_params)
 
+    #
     @classmethod
     def import_(cls, import_params: dict, conn_params: dict, dest_table: str, **kwargs):
         if import_params["jenis_data"] == "nasional":
@@ -56,6 +57,7 @@ class COVIDDataConnector(BaseConnector):
             df = cls._get_province_df(province)
         cls.store_df(df, dest_table, if_exists=import_params["sync_method"])
 
+    # This function is used to preview data before importing it.
     @classmethod
     def preview(
         cls, preview_params: dict, source_id: UUID, page: int, page_size: int, **kwargs
